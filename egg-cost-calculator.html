@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Egg Cost Calculator – cost per egg and per dozen</title>
+<meta name="description" content="Calculate your backyard flock's cost per egg and per dozen from feed, other costs and eggs collected. Includes a simple formula and worked example.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="page-head">
+<h1>CoopCost</h1>
+<nav class="sites">
+<a href="index.html">Home</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="support.html">Support</a>
+<a href="egg-cost-calculator.html" aria-current="page">Egg Cost Calculator</a>
+<a href="mailto:moon951753@gmail.com">Contact: moon951753@gmail.com</a>
+</nav>
+</header>
+
+<main>
+<section class="calculator" aria-labelledby="calculator-heading">
+<h2 id="calculator-heading">Egg Cost Calculator</h2>
+<p class="lede">Find the cost per egg and per dozen for your backyard flock. Use the same period for all three inputs, and the same currency for both costs. Enter amounts without a currency symbol.</p>
+<p>Results update as you type. Enter 0 for any costs you did not have.</p>
+<p>
+<label for="feed-cost">Feed cost for the period</label>
+<input id="feed-cost" type="number" min="0" step="any" inputmode="decimal">
+</p>
+<p>
+<label for="other-costs">Other costs for the period (bedding, supplements, etc.)</label>
+<input id="other-costs" type="number" min="0" step="any" inputmode="decimal" value="0">
+</p>
+<p>
+<label for="eggs">Eggs collected in the period</label>
+<input id="eggs" type="number" min="0" step="1" inputmode="numeric">
+</p>
+<output id="calculation-result" for="feed-cost other-costs eggs" aria-live="polite" aria-atomic="true">Use the formula below to calculate your egg costs.</output>
+<noscript><p>JavaScript is disabled. You can still calculate both results using the formula and example below.</p></noscript>
+</section>
+
+<section aria-labelledby="formula-heading">
+<h2 id="formula-heading">How to calculate egg costs</h2>
+<p>Total costs = feed cost + other costs.<br>
+Cost per egg = total costs / eggs collected.<br>
+Cost per dozen = cost per egg × 12.</p>
+<p>Include feed used during the period and ongoing costs such as bedding and supplements. Count the eggs collected during that same period. If no eggs were collected, there is no cost-per-egg figure to calculate yet.</p>
+<p>One-time setup costs, such as a coop or equipment, are usually tracked separately from ongoing costs.</p>
+<p>Worked example: feed costs of 40 plus other costs of 10 give total costs of 50. With 100 eggs collected, the cost per egg is 50 / 100 = 0.50, and the cost per dozen is 0.50 × 12 = 6.00, in your chosen currency. Results are rounded to two decimal places after calculation.</p>
+</section>
+
+<h2>Keep track each month</h2>
+<p>CoopCost does this automatically every month from the expenses and egg totals you record. It is an offline Android notebook with no account, ads or analytics. <a href="https://play.google.com/store/apps/details?id=com.coopcost.app">Download CoopCost on Google Play</a> for free, with an optional one-time Pro unlock processed by Google Play.</p>
+</main>
+
+<footer class="page-foot">
+<p>Operator/developer: Barry39</p>
+<p><a href="privacy.html">Privacy Policy</a> &middot; <a href="support.html">Support</a></p>
+</footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  const inputs = ['feed-cost', 'other-costs', 'eggs'].map(function (id) {
+    return document.getElementById(id);
+  });
+  const result = document.getElementById('calculation-result');
+  const format = function (value) {
+    return value.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+      useGrouping: false
+    });
+  };
+
+  function calculate() {
+    const values = inputs.map(function (input) { return input.valueAsNumber; });
+    if (!values.every(Number.isFinite)) {
+      result.textContent = 'Enter a valid number in every field.';
+      return;
+    }
+    const [feed, other, eggs] = values;
+    if (eggs <= 0) {
+      result.textContent = 'Enter more than zero eggs to calculate egg costs.';
+      return;
+    }
+    if (feed < 0 || other < 0) {
+      result.textContent = 'Enter costs of zero or more.';
+      return;
+    }
+    const total = feed + other;
+    const perEgg = total / eggs;
+    const perDozen = perEgg * 12;
+    if (![total, perEgg, perDozen].every(Number.isFinite)) {
+      result.textContent = 'These values are too large to calculate. Try smaller amounts.';
+      return;
+    }
+    result.textContent = 'Cost per egg: ' + format(perEgg) +
+      '; cost per dozen: ' + format(perDozen) + '.';
+  }
+
+  inputs.forEach(function (input) {
+    input.addEventListener('input', calculate);
+  });
+  calculate();
+}());
+</script>
+</body>
+</html>

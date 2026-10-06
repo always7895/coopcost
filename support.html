@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CoopCost Support</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="page-head">
+<h1>CoopCost Support</h1>
+<nav class="sites">
+<a href="index.html">Home</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="mailto:moon951753@gmail.com">Contact: moon951753@gmail.com</a>
+</nav>
+</header>
+
+<main>
+<h2>Keep a restorable backup</h2>
+<p>Open Settings and export JSON. Use the device share sheet to save it outside the app, then verify the destination file. Opening or closing the share sheet does not prove a backup was saved. CSV is for spreadsheets, not restore.</p>
+
+<h2>Restore a notebook</h2>
+<p>Select a JSON backup in Settings. Review the preview, then confirm replacement only if you want to discard the current notebook. Cancel leaves the notebook unchanged. A backup must use the supported schema and be no larger than 5 MiB. A compact input can still be rejected if its canonical exported backup would exceed the limit.</p>
+<p>If an older notebook is already larger than 5 MiB, it remains readable and exportable, but an edit or deletion can be saved only when that SINGLE change produces a complete backup at or below 5 MiB. Deletions that still leave it oversized are not saved and cannot accumulate. First export and verify the original outside the app. Keep that original safe; prepare a smaller schema-compatible JSON copy externally, then preview and explicitly replace with that copy. Do not reset or overwrite your only original backup to reduce size. CoopCost does not provide a batch-reduction tool.</p>
+
+<h2>If storage cannot be opened</h2>
+<p>Do not reset first. Try reopening/retry. When raw saved text is available, export it before considering reset. Future-version or malformed data is not silently erased. Reset is destructive and requires confirmation. Keep your original backups; support cannot promise recovery.</p>
+
+<h2>If a write has an uncertain outcome</h2>
+<p>A storage error can occur even after a write committed. CoopCost reads storage back before permitting another edit. If the previous saved data is verified unchanged, your draft remains available for retry. Otherwise editing and normal JSON/CSV snapshot exports are blocked so the old view cannot overwrite or masquerade as the saved notebook.</p>
+<p>Use <strong>Retry storage check &mdash; keep drafts</strong>, or export the original saved text using <strong>Export raw recovery data</strong>. <strong>Discard drafts and reopen saved data</strong> explicitly abandons unsaved forms and reads storage again without writing. If the saved text cannot be opened, <strong>Discard drafts and open recovery</strong> enables the normal recovery flow; deleting storage still requires its separate two-stage confirmation. A share sheet closing never confirms the destination saved a file.</p>
+<p>Private export copies are retained beyond share completion; a later export attempts expired-only cleanup after a 24-hour grace period. Copies can persist longer, and the OS can evict them earlier. At the 20-entry export-cache cap, another export fails instead of deleting recent copies. Keep and verify an external backup; cached copies are not a backup guarantee.</p>
+
+<h2>Understanding the summary</h2>
+<p>Monthly operating expense is feed plus other operating purchases; setup purchases are shown separately. Bulk purchases belong to their purchase month. The per-egg figure divides recorded operating purchases by recorded eggs. It is not profit, actual feed consumed or an estimate of missing records. Zero recorded eggs means no per-egg figure.</p>
+
+<h2>Currency and edits</h2>
+<p>Choose one supported currency at setup. While any records exist the currency is locked to avoid reinterpreting existing amounts. Flock name can be edited. No exchange-rate conversion is performed.</p>
+
+<h2>CoopCost Pro, purchases and refunds (version 1.1 and later)</h2>
+<p><strong>What does CoopCost Pro add?</strong> Summaries for months other than the current month, annual totals and CSV export. Pro is one optional one-time in-app purchase; there is no subscription and nothing renews automatically.</p>
+<p><strong>What stays free?</strong> Egg and expense logging, the current-month summary, and JSON backup and restore. (Each notebook holds up to 20,000 egg days and 20,000 expenses, within a 5 MiB backup.)</p>
+<p><strong>How much does Pro cost?</strong> The price is set in Google Play and shown in the app before purchase.</p>
+<p><strong>How do I get Pro back after reinstalling the app or using a new phone?</strong> Install the app, sign in with the same Google account, then use <strong>Settings → Unlock Pro → Restore purchases</strong>. JSON backups never grant or remove Pro.</p>
+<p><strong>Who handles refunds?</strong> Google Play handles refunds, not the developer. After a refund is granted, the app removes Pro at its next successful check.</p>
+<p><strong>Does buying Pro send the notebook anywhere?</strong> No. Google Play tells the app only whether Pro is owned; the app keeps just a yes/no unlock flag and the time it was last checked on your device. Flock records are never sent to Google Play or the developer, and CoopCost never sees payment-card details.</p>
+
+<h2>Reports</h2>
+<p>When a monitored support channel is available, include app version, device/OS, what you tried and the exact error. Do not send payment-card information, passwords or private notebook contents. App-store download/refund questions go to the relevant store.</p>
+</main>
+
+<footer class="page-foot">
+<p>Contact: <a href="mailto:moon951753@gmail.com">moon951753@gmail.com</a></p>
+<p><a href="index.html">Home</a> &middot; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+</div>
+</body>
+</html>

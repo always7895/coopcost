@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ServiceTrail Privacy Policy</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="page-head">
+<h1>ServiceTrail Privacy Policy</h1>
+<p class="meta">Effective date: 2026-10-11</p>
+<nav class="sites">
+<a href="privacy.html">Privacy Policy</a>
+<a href="support.html">Support</a>
+<a href="mailto:moon951753@gmail.com">Contact: moon951753@gmail.com</a>
+</nav>
+</header>
+
+<main>
+<h2>What is stored on your device</h2>
+
+<p>ServiceTrail stores your vehicles and machines, your service entries (including the parts and labor costs, part numbers, shop names and notes you type into them), your fuel fill-ups, your reminder rules and your app settings on your device. The app has no account and no developer-operated backend, and it contains no ads and no analytics.</p>
+
+<h2>No data is sent to the developer</h2>
+
+<p>No data is collected and sent to the developer. The release build has no android.permission.INTERNET permission (per its merged Android manifest), so the app itself cannot send anything over the network. Everything you enter stays in the app's private storage on your phone. The notification library brings Firebase messaging components with it; they have no configuration in this app and no network access, so they send nothing. There is no crash reporting, analytics or advertising SDK.</p>
+
+<h2>Permissions</h2>
+
+<p>Permissions read from the merged Android manifest of the release build:</p>
+
+<ul>
+<li>com.android.vending.BILLING, for the optional Google Play purchase.</li>
+<li>android.permission.POST_NOTIFICATIONS, asked only when you switch reminders on.</li>
+<li>android.permission.RECEIVE_BOOT_COMPLETED and android.permission.WAKE_LOCK, so scheduled reminders are restored after the phone restarts.</li>
+<li>android.permission.ACCESS_NETWORK_STATE, added by the billing and notification libraries.</li>
+</ul>
+
+<p>There is no internet, storage, location, camera, contacts or exact-alarm permission. Reminders use inexact scheduling, and Android may deliver them a little late.</p>
+
+<h2>Reminders are scheduled on the phone only</h2>
+
+<p>Reminder rules (date, distance or both) are turned into notifications scheduled on your own phone. There is no server: the developer is not told that a reminder exists, does not calculate the next due date and receives nothing when a notification fires. Android decides when an inexact notification is actually delivered and may deliver it a little late. A distance-only reminder is scheduled from a due date estimated from the odometer or hour-meter readings you entered; the estimate stays on your device and is labelled "estimated" in the notification and in the Due list.</p>
+
+<h2>Exports, PDFs and shares leave the app only when you send them</h2>
+
+<p>You can export a JSON backup, restore one, export CSV, preview the Pro service-history PDF, save it, and share the PDF or a service entry as text. All of these are user-initiated: nothing leaves the app unless you choose to export, save or share it, and the recipient, app or service you choose may then store or forward what you sent according to its own terms. The developer does not receive a copy of what you export and cannot confirm that a share was saved by the recipient. Share only with recipients you trust. The PDF is your own records; it makes no claim about what the vehicle is worth.</p>
+
+<p>App data sits in the app's own private storage on the device; that is not an additional encryption guarantee. The app allows Android backup (android:allowBackup is true), so if device backup is turned on, Android's own backup may include this app's data in your Google account backup, and device transfer may copy it to a new phone. The developer cannot access that backup. Third-party file providers may copy files you export or share, depending on their settings.</p>
+
+<h2>Purchases</h2>
+
+<p>ServiceTrail is free to use with up to 2 active vehicles or machines, and ServiceTrail Pro is one optional one-time in-app purchase. It is not a subscription and there is no trial. Purchases are handled by Google Play under Google's terms; the price is set in Google Play and shown in the app before purchase. The developer does not process the payment and does not receive your payment-card details. After reinstalling the app or moving to a new phone, use Restore purchases with the same Google account. JSON backups never grant or remove Pro. Refunds are handled by Google Play; if Pro is refunded, every vehicle, service, fill-up and reminder stays viewable, editable and exportable, and only the Pro features lock again (more than 2 active vehicles or machines, the service-history PDF and text sharing, and the yearly summaries). Pro is available on Android through Google Play only.</p>
+
+<h2>Retention and deletion</h2>
+
+<p>Records have no scheduled expiry: your vehicles, service entries, fill-ups and reminders stay on the device until you delete them. You can delete your own entries inside the app, and archived vehicles stay on the device (they simply do not count toward the free limit). Uninstalling removes the app's local data; uninstall and backup behaviour depend on the operating system and its settings. Deleting local data does not delete files you already exported, saved or shared, recipient copies or operating-system backups; manage those with the relevant provider. Because the developer holds no copy of your data, the developer cannot recover a lost vehicle list, and there is no developer-side deletion request to make.</p>
+
+<h2>If you contact support</h2>
+
+<p>Support e-mail: moon951753@gmail.com. If you contact support, send only what is needed to describe the problem; do not send a backup file or your full vehicle list unless it is necessary and both sides agree to it. Support e-mails are kept only as long as needed to answer them.</p>
+
+<h2>Accuracy</h2>
+
+<p>ServiceTrail keeps the records you enter. It makes no claim about what a vehicle is worth, about a resale price, about any warranty or about legal record status; the PDF is the owner's own records.</p>
+
+<h2>Changes to this policy</h2>
+
+<p>If this policy changes, the updated version will be posted on this page with a new effective date.</p>
+</main>
+
+<footer class="page-foot">
+<p>Operator/developer: Barry39</p>
+<p>Contact: <a href="mailto:moon951753@gmail.com">moon951753@gmail.com</a></p>
+<p><a href="privacy.html">Privacy Policy</a> &middot; <a href="support.html">Support</a></p>
+</footer>
+</div>
+</body>
+</html>
